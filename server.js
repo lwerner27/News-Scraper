@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(router)
 
 // Static directory
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 mongoose.connect("mongodb://localhost/scraping_db");
 

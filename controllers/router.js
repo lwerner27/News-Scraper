@@ -13,6 +13,17 @@ router.get("/scrape", (req, res) => {
     res.send("Articles have been scraped")
 })
 
+router.get("/", (req, res) => {
+    let hbsObject;
+    db.Article.find({}).then(dbArticles => {
+        hbsObject = {
+            documents: dbArticles
+        }
+        res.render("index", hbsObject)
+    })
+
+})
+
 
 
 
